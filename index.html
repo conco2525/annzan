@@ -14,7 +14,7 @@
     <h2 id="rndm2"></h2><br>
 
     <div id="answer">
-        <h2 id="sm">正解は</h2>
+        <h2 id="sum">正解は</h2>
     </div>
     <div id="next">
         <h2>次の問題</h2>
@@ -29,10 +29,10 @@
         const randomNumber2 = Math.floor(Math.random() * (max - min) + min);
         document.getElementById("rndm2").textContent = randomNumber2;
 
-        var sum = randomNumber1 * randomNumber2;
+        var sumNumber = randomNumber1 * randomNumber2;
 
         document.getElementById("answer").onclick = function () {
-            document.getElementById("sm").innerHTML = sum;
+            document.getElementById("sum").innerHTML = sumNumber;
         };
 
         document.getElementById("next").onclick = function doReloadWithCache() {
