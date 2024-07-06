@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>暗算</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+</head>
+
+<body class="container">
+    <h1>暗算</h1>
+    <h2 id="rndm1"></h2>
+    <h2 id="rndm2"></h2><br>
+
+    <div id="answer">
+        <h2 id="sm">正解は</h2>
+    </div>
+    <div id="next">
+        <h2>次の問題</h2>
+    </div>
+    <script>
+
+        const min = 10;
+        const max = 100;
+        const randomNumber1 = Math.floor(Math.random() * (max - min) + min);
+        document.getElementById("rndm1").textContent = randomNumber1;
+
+        const randomNumber2 = Math.floor(Math.random() * (max - min) + min);
+        document.getElementById("rndm2").textContent = randomNumber2;
+
+        var sum = randomNumber1 * randomNumber2;
+
+        document.getElementById("answer").onclick = function () {
+            document.getElementById("sm").innerHTML = sum;
+        };
+
+        document.getElementById("next").onclick = function doReloadWithCache() {
+
+            // キャッシュを利用してリロード
+            window.location.reload(false);
+
+        };
+
+    </script>
+</body>
+
+</html>
